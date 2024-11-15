@@ -1,4 +1,34 @@
 // Add your javascript here
+$(document).ready(function() {
+  $('#contact-form').submit(function(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Get form data
+    var formData = $(this).serialize();
+
+    // Perform AJAX request
+    $.ajax({
+      type: 'POST',
+      url: $(this).attr('action'),
+      data: formData,
+      success: function(response) {
+        // Handle success response
+        $('#form-message').text('Thank you for your message! We will get back to you soon.');
+        $('#form-message').removeClass('error').addClass('success');
+        $('#contact-form')[0].reset(); // Reset the form
+        // Redirect to home page after 3 seconds
+        setTimeout(function() {
+          window.location.href = 'https://blondelseumo.github.io/';
+        }, 3000);
+            },
+            error: function(error) {
+        // Handle error response
+        $('#form-message').text('Oops! Something went wrong. Please try again.');
+        $('#form-message').removeClass('success').addClass('error');
+      }
+    });
+  });
+});
 // Don't forget to add it into respective layouts where this js file is needed
 
 $(document).ready(function() {
