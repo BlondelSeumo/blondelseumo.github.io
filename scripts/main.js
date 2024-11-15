@@ -5,7 +5,6 @@ $(document).ready(function() {
 
     // Get form data
     var formData = $(this).serialize();
-
     // Perform AJAX request
     $.ajax({
       type: 'POST',
