@@ -70,3 +70,28 @@ $('a.smooth-scroll')
     }
   }
 });
+
+$(document).ready(function(){
+    // Show or hide the "Back to Top" and "Back to Bottom" buttons
+    $(window).scroll(function(){
+        if ($(this).scrollTop() > 100) {
+            $('#back-to-top').fadeIn();
+            $('#back-to-bottom').fadeOut();
+        } else {
+            $('#back-to-top').fadeOut();
+            $('#back-to-bottom').fadeIn();
+        }
+    });
+
+    // Scroll to the top of the page when "Back to Top" button is clicked
+    $('#back-to-top').click(function(){
+        $('html, body').animate({scrollTop : 0},800);
+        return false;
+    });
+
+    // Scroll to the bottom of the page when "Back to Bottom" button is clicked
+    $('#back-to-bottom').click(function(){
+        $('html, body').animate({scrollTop: $(document).height()}, 800);
+        return false;
+    });
+});

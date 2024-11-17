@@ -3844,7 +3844,8 @@ Created using IcoMoon - icomoon.io
     /* For Opera 11.1 to 12.0 */
     /* For Firefox 3.6 to 15 */
     background: linear-gradient(0deg, rgba(44, 44, 44, 0.2), rgba(224, 23, 3, 0.6));
-    /* Standard syntax */ }
+    /* Standard syntax (must be last) */
+  }
   .page-header .container {
     z-index: 2; }
 
@@ -5284,3 +5285,16 @@ a.credit {
 /* Common Style */
 .section {
   padding-bottom: 0; }
+
+/* Back to Top Button */
+#back-to-top, #back-to-bottom {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    z-index: 99;
+}
+
+#back-to-bottom {
+    bottom: 60px; /* Adjust this value to position the button correctly */
+}
